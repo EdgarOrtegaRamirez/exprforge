@@ -1,0 +1,27 @@
+[package]
+name = "exprforge"
+version = "0.1.0"
+edition = "2021"
+description = "Safe mathematical expression evaluator with unit awareness, dimensional analysis, and REPL"
+license = "MIT"
+repository = "https://github.com/EdgarOrtegaRamirez/exprforge"
+keywords = ["math", "expression", "evaluator", "units", "calculator"]
+categories = ["command-line-utilities", "mathematics", "science"]
+
+[[bin]]
+name = "exprforge"
+path = "src/main.rs"
+
+[lib]
+name = "exprforge"
+path = "src/lib.rs"
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+
+[dev-dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
